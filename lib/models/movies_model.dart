@@ -46,8 +46,8 @@
 //   }
 // }
 
-class AutoGenerate {
-  AutoGenerate({
+class Movies {
+  Movies({
     required this.averageRating,
     this.backdropPath,
     // required this.comments,
@@ -61,7 +61,7 @@ class AutoGenerate {
     required this.page,
     this.posterPath,
     required this.public,
-    required this.listMovie,
+    required this.listMovies,
     required this.revenue,
     required this.runtime,
     required this.sortBy,
@@ -81,14 +81,14 @@ class AutoGenerate {
   late final int page;
   late final Null posterPath;
   late final bool public;
-  late final List<Movie> listMovie;
+  late final List<Movie> listMovies;
   late final int revenue;
   late final int runtime;
   late final String sortBy;
   late final int totalPages;
   late final int totalResults;
 
-  AutoGenerate.fromJson(Map<String, dynamic> json) {
+  Movies.fromJson(Map<String, dynamic> json) {
     averageRating = json['average_rating'];
     backdropPath = null;
     // comments = Comments.fromJson(json['comments']);
@@ -102,7 +102,7 @@ class AutoGenerate {
     page = json['page'];
     posterPath = null;
     public = json['public'];
-    listMovie =
+    listMovies =
         List.from(json['results']).map((e) => Movie.fromJson(e)).toList();
     revenue = json['revenue'];
     runtime = json['runtime'];
@@ -126,7 +126,7 @@ class AutoGenerate {
     _data['page'] = page;
     _data['poster_path'] = posterPath;
     _data['public'] = public;
-    _data['results'] = listMovie.map((e) => e.toJson()).toList();
+    _data['results'] = listMovies.map((e) => e.toJson()).toList();
     _data['revenue'] = revenue;
     _data['runtime'] = runtime;
     _data['sort_by'] = sortBy;
@@ -210,7 +210,7 @@ class Movie {
     required this.releaseDate,
     required this.title,
     required this.video,
-    required this.voteAverage,
+    // required this.voteAverage,
     required this.voteCount,
   });
   late final bool adult;
@@ -226,7 +226,7 @@ class Movie {
   late final String releaseDate;
   late final String title;
   late final bool video;
-  late final double voteAverage;
+  // late final double voteAverage;
   late final int voteCount;
 
   Movie.fromJson(Map<String, dynamic> json) {
@@ -243,7 +243,7 @@ class Movie {
     releaseDate = json['release_date'];
     title = json['title'];
     video = json['video'];
-    voteAverage = json['vote_average'];
+    // voteAverage = json['vote_average'];
     voteCount = json['vote_count'];
   }
 
@@ -262,7 +262,7 @@ class Movie {
     _data['release_date'] = releaseDate;
     _data['title'] = title;
     _data['video'] = video;
-    _data['vote_average'] = voteAverage;
+    // _data['vote_average'] = voteAverage;
     _data['vote_count'] = voteCount;
     return _data;
   }
