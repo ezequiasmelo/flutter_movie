@@ -17,6 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 https://www.themoviedb.org/
+https://developers.themoviedb.org/4/list/get-list
 
 
 converter json em Model dart
