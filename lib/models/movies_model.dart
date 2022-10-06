@@ -210,7 +210,7 @@ class Movie {
     required this.releaseDate,
     required this.title,
     required this.video,
-    // required this.voteAverage,
+    required this.voteAverage,
     required this.voteCount,
   });
   late final bool adult;
@@ -226,7 +226,7 @@ class Movie {
   late final String releaseDate;
   late final String title;
   late final bool video;
-  // late final double voteAverage;
+  late final num voteAverage;
   late final int voteCount;
 
   Movie.fromJson(Map<String, dynamic> json) {
@@ -243,7 +243,7 @@ class Movie {
     releaseDate = json['release_date'];
     title = json['title'];
     video = json['video'];
-    // voteAverage = json['vote_average'];
+    voteAverage = json['vote_average'];
     voteCount = json['vote_count'];
   }
 
@@ -262,7 +262,7 @@ class Movie {
     _data['release_date'] = releaseDate;
     _data['title'] = title;
     _data['video'] = video;
-    // _data['vote_average'] = voteAverage;
+    _data['vote_average'] = voteAverage;
     _data['vote_count'] = voteCount;
     return _data;
   }
