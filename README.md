@@ -22,3 +22,7 @@ https://developers.themoviedb.org/4/list/get-list
 
 converter json em Model dart
     https://www.dripcoding.com/json-to-dart/
+
+
+https://pub.dev/packages/lottie/install
+https://lottiefiles.com/
