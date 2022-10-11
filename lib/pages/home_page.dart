@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie/controllers/movie_controller.dart';
 import 'package:flutter_movie/repositories/movies_repository_imp.dart';
 import 'package:flutter_movie/service/dio_service_imp.dart';
-import 'package:flutter_movie/utils/apis.utils.dart';
 import 'package:lottie/lottie.dart';
 
 import '../models/movies_model.dart';
@@ -17,7 +16,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final MovieController _controller = MovieController(
-    MoviesRepositoryImp(DioServiceImp()),
+    MoviesRepositoryImp(
+      DioServiceImp(),
+    ),
   );
 
   @override
@@ -29,6 +30,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 50),
               ValueListenableBuilder<Movies?>(
                 valueListenable: _controller.movies,
                 builder: (_, movies, __) {
