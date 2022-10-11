@@ -29,18 +29,27 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 40),
               ValueListenableBuilder<Movies?>(
-                  valueListenable: _controller.movies,
-                  builder: (_, movies, __) {
-                    return Visibility(
-                      visible: movies != null,
-                      child: Text(
-                        'Movies',
-                        style: Theme.of(context).textTheme.headline3,
-                      ),
-                    );
-                  }),
+                valueListenable: _controller.movies,
+                builder: (_, movies, __) {
+                  return Visibility(
+                    visible: movies != null,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Movies',
+                          style: Theme.of(context).textTheme.headline3,
+                        ),
+                        TextField(
+                          onChanged: _controller.onChanged,
+                        ),
+                        SizedBox(height: 20),
+                      ],
+                    ),
+                  );
+                },
+              ),
               ValueListenableBuilder<Movies?>(
                 valueListenable: _controller.movies,
                 builder: (_, movies, __) {
