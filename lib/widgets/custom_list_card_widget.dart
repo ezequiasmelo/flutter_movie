@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_movie/pages/details_page.dart';
 import 'package:flutter_movie/utils/apis.utils.dart';
@@ -37,12 +38,10 @@ class CustomListCardWidget extends StatelessWidget {
                 ),
                 child: Hero(
                   tag: movie.id,
-                  child: Image.network(
-                    API.REQUEST_IMG(movie.posterPath),
-                    loadingBuilder: (_, child, progress) {
-                      if (progress == null) return child;
-                      return CircularProgressIndicator.adaptive();
-                    },
+                  child: CachedNetworkImage(
+                    progressIndicatorBuilder: (context, url, progress) =>
+                        CircularProgressIndicator.adaptive(),
+                    imageUrl: API.REQUEST_IMG(movie.posterPath),
                   ),
                 ),
               ),

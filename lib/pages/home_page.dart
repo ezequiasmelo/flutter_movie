@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie/controllers/movie_controller.dart';
+import 'package:flutter_movie/decorators/movies_cache_repository_decorator.dart';
 import 'package:flutter_movie/repositories/movies_repository_imp.dart';
 import 'package:flutter_movie/service/dio_service_imp.dart';
 import 'package:lottie/lottie.dart';
@@ -16,8 +17,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final MovieController _controller = MovieController(
-    MoviesRepositoryImp(
-      DioServiceImp(),
+    MoviesCacheRepositoryDecorator(
+      MoviesRepositoryImp(
+        DioServiceImp(),
+      ),
     ),
   );
 
@@ -30,7 +33,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 50),
               ValueListenableBuilder<Movies?>(
                 valueListenable: _controller.movies,
                 builder: (_, movies, __) {
@@ -43,8 +45,13 @@ class _HomePageState extends State<HomePage> {
                           'Movies',
                           style: Theme.of(context).textTheme.headline3,
                         ),
+                        SizedBox(height: 10),
                         TextField(
                           onChanged: _controller.onChanged,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Buscar filme',
+                          ),
                         ),
                         SizedBox(height: 20),
                       ],
@@ -63,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                           itemBuilder: (_, idx) => CustomListCardWidget(
                             movie: movies.listMovies[idx],
                           ),
-                          separatorBuilder: (_, __) => Divider(),
+                          separatorBuilder: (_, __) => SizedBox(height: 10),
                         )
                       : Lottie.asset('assets/lottie.json');
                 },

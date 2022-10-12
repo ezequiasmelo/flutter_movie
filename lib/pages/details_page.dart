@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/movies_model.dart';
-import '../utils/apis.utils.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_movie/utils/apis.utils.dart';
 
 class DetailsPage extends StatelessWidget {
   final Movie movie;
@@ -23,12 +24,10 @@ class DetailsPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: Hero(
                   tag: movie.id,
-                  child: Image.network(
-                    API.REQUEST_IMG(movie.posterPath),
-                    loadingBuilder: (_, child, progress) {
-                      if (progress == null) return child;
-                      return CircularProgressIndicator.adaptive();
-                    },
+                  child: CachedNetworkImage(
+                    progressIndicatorBuilder: (context, url, progress) =>
+                        CircularProgressIndicator.adaptive(),
+                    imageUrl: API.REQUEST_IMG(movie.posterPath),
                   ),
                 ),
               ),
