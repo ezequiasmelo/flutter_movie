@@ -4,6 +4,8 @@ import 'package:flutter_movie/core/utils/apis.utils.dart';
 import 'package:flutter_movie/features/movie/data/datasources/get_movies_datasource.dart';
 import 'package:flutter_movie/features/movie/domain/entities/movie_entity.dart';
 
+import '../../dtos/movie_dto.dart';
+
 class GetMoviesRemoteDataSourceImp implements GetMoviesDataSource {
   final HttpService _httpService;
   GetMoviesRemoteDataSourceImp(this._httpService);

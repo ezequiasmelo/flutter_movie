@@ -2,6 +2,15 @@ import 'package:flutter_movie/core/data/services/dio_http_service_imp.dart';
 import 'package:flutter_movie/core/domain/services/http_service.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/movie/data/datasources/get_movies_datasource.dart';
+import '../../features/movie/data/datasources/local/get_movies_local_datasource_decorator_imp.dart';
+import '../../features/movie/data/datasources/remote/get_movies_remote_datasource_imp.dart';
+import '../../features/movie/data/repositories/get_movies_repository_imp.dart';
+import '../../features/movie/domain/repositories/get_movies_repository.dart';
+import '../../features/movie/domain/usecases/get_movies_usecase.dart';
+import '../../features/movie/domain/usecases/get_movies_usecase_imp.dart';
+import '../../features/movie/presentation/controllers/movie_controller.dart';
+
 class Inject {
   static initialize() {
     GetIt getIt = GetIt.instance;
@@ -11,7 +20,7 @@ class Inject {
     // datasources
     getIt.registerLazySingleton<GetMoviesDataSource>(
       () => GetMoviesLocalDataSourceDecoratorImp(
-        GetMoviesRemoteDatasourceImp(getIt()),
+        GetMoviesRemoteDataSourceImp(getIt()),
       ),
     );
     // repositories

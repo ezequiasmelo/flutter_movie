@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie/features/movie/domain/entities/movie_details_entity.dart';
 
-import '../models/movies_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_movie/core/utils/apis.utils.dart';
 
 class DetailsPage extends StatelessWidget {
-  final Movie movie;
+  final MovieDetailsEntity movie;
   const DetailsPage({Key? key, required this.movie}) : super(key: key);
 
   @override
