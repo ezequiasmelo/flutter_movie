@@ -1,7 +1,7 @@
 import 'package:flutter_movie/models/movies_model.dart';
 import 'package:flutter_movie/repositories/movies_repository.dart';
 import 'package:flutter_movie/service/dio_service.dart';
-import 'package:flutter_movie/utils/apis.utils.dart';
+import 'package:flutter_movie/core/utils/apis.utils.dart';
 
 class MoviesRepositoryImp implements MoviesRepository {
   final DioService _dioService;

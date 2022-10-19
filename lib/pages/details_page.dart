@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/movies_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter_movie/utils/apis.utils.dart';
+import 'package:flutter_movie/core/utils/apis.utils.dart';
 
 class DetailsPage extends StatelessWidget {
   final Movie movie;

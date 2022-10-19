@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie/core/inject/inject.dart';
 import 'package:flutter_movie/pages/home_page.dart';
 
 void main() {
+  Inject.initialize();
   runApp(const MyApp());
 }
 

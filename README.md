@@ -29,3 +29,6 @@ https://lottiefiles.com/
 
 https://pub.dev/packages/shared_preferences/install
 https://pub.dev/packages/cached_network_image/install
+
+https://pub.dev/packages/get_it/install
+https://pub.dev/packages/dartz/install
