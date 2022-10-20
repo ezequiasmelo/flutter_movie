@@ -22,63 +22,6 @@ class _HomePageState extends State<HomePage> {
     _controller = GetIt.I.get<MovieController>();
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: SingleChildScrollView(
-  //       child: Padding(
-  //         padding: const EdgeInsets.all(28),
-  //         child: Column(
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           children: [
-  //             ValueListenableBuilder<MovieEntity?>(
-  //               valueListenable: _controller.movies,
-  //               builder: (_, movies, __) {
-  //                 return Visibility(
-  //                   visible: movies != null,
-  //                   child: Column(
-  //                     crossAxisAlignment: CrossAxisAlignment.start,
-  //                     children: [
-  //                       Text(
-  //                         'Movies',
-  //                         style: Theme.of(context).textTheme.headline3,
-  //                       ),
-  //                       SizedBox(height: 10),
-  //                       TextField(
-  //                         onChanged: _controller.onChanged,
-  //                         decoration: InputDecoration(
-  //                           border: OutlineInputBorder(),
-  //                           labelText: 'Buscar filme',
-  //                         ),
-  //                       ),
-  //                       SizedBox(height: 20),
-  //                     ],
-  //                   ),
-  //                 );
-  //               },
-  //             ),
-  //             ValueListenableBuilder<MovieEntity?>(
-  //               valueListenable: _controller.movies,
-  //               builder: (_, movies, __) {
-  //                 return movies != null
-  //                     ? ListView.separated(
-  //                         physics: NeverScrollableScrollPhysics(),
-  //                         shrinkWrap: true,
-  //                         itemCount: movies.listMovies.length,
-  //                         itemBuilder: (_, idx) => CustomListCardWidget(
-  //                           movie: movies.listMovies[idx],
-  //                         ),
-  //                         separatorBuilder: (_, __) => SizedBox(height: 10),
-  //                       )
-  //                     : Lottie.asset('assets/lottie.json');
-  //               },
-  //             ),
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +31,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
               ValueListenableBuilder<MovieEntity?>(
                 valueListenable: _controller.movies,
                 builder: (__, movies, _) {
@@ -111,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                                 Colors.grey.withOpacity(0.15),
                                 Colors.grey.withOpacity(0.05),
                               ],
-                              stops: [0, 7, 1],
+                              stops: const [0, 7, 1],
                             ),
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -125,13 +67,14 @@ class _HomePageState extends State<HomePage> {
                                     fillColor: Colors.white30,
                                     focusColor: Colors.white30,
                                     hoverColor: Colors.white30,
+                                    labelText: 'Buscar filme',
                                   ),
-                                  cursorColor: Colors.white30,
                                 ),
                               )
                             ],
                           ),
-                        )
+                        ),
+                        const SizedBox(height: 20),
                       ],
                     ),
                   );
@@ -148,7 +91,8 @@ class _HomePageState extends State<HomePage> {
                           itemBuilder: (_, idx) => CustomListCardWidget(
                             movie: movies.listMovies[idx],
                           ),
-                          separatorBuilder: (_, __) => Divider(),
+                          separatorBuilder: (_, __) =>
+                              const SizedBox(height: 10),
                         )
                       : Lottie.asset('assets/lottie.json');
                 },

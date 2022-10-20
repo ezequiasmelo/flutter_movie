@@ -6,14 +6,14 @@ extension MovieDto on MovieEntity {
   static MovieEntity fromJson(Map json) {
     return MovieEntity(
       averageRating: json['average_rating'] as double,
-      backdropPath: json['backdropPath'],
+      backdropPath: json['backdrop_path'],
       description: json['description'],
       id: json['id'] as int,
       iso_3166_1: json['iso_3166_1'],
       iso_639_1: json['iso_639_1'],
       name: json['name'],
       page: json['page'] as int,
-      posterPath: json['posterPath'],
+      posterPath: json['poster_path'],
       public: json['public'] as bool,
       listMovies: List.from(json['results'])
           .map((e) => MovieDetailsDto.fromJson(e))
