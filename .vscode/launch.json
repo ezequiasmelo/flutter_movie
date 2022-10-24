@@ -20,6 +20,66 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
+        },
+        {
+            "name": "dependencies",
+            "cwd": "packages\\commons\\dependencies",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dependencies (profile mode)",
+            "cwd": "packages\\commons\\dependencies",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dependencies (release mode)",
+            "cwd": "packages\\commons\\dependencies",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "micro_core",
+            "cwd": "packages\\core\\micro_core",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "micro_core (profile mode)",
+            "cwd": "packages\\core\\micro_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "micro_core (release mode)",
+            "cwd": "packages\\core\\micro_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "movie",
+            "cwd": "packages\\micro_apps\\movie",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "movie (profile mode)",
+            "cwd": "packages\\micro_apps\\movie",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "movie (release mode)",
+            "cwd": "packages\\micro_apps\\movie",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
         }
     ]
 }

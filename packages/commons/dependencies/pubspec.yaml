@@ -1,0 +1,25 @@
+name: dependencies
+description: A new Flutter package project.
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio:
+  lottie: ^1.4.2
+  shared_preferences: ^2.0.15
+  cached_network_image: ^3.2.1
+  get_it: ^7.2.0
+  dartz: ^0.10.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:

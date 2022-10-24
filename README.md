@@ -16,19 +16,31 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-https://www.themoviedb.org/
-https://developers.themoviedb.org/4/list/get-list
+    https://www.themoviedb.org/
+    https://developers.themoviedb.org/4/list/get-list
 
 
-converter json em Model dart
-    https://www.dripcoding.com/json-to-dart/
+    converter json em Model dart
+        https://www.dripcoding.com/json-to-dart/
 
 
-https://pub.dev/packages/lottie/install
-https://lottiefiles.com/
+    https://pub.dev/packages/lottie/install
+    https://lottiefiles.com/
 
-https://pub.dev/packages/shared_preferences/install
-https://pub.dev/packages/cached_network_image/install
+    https://pub.dev/packages/shared_preferences/install
+    https://pub.dev/packages/cached_network_image/install
 
-https://pub.dev/packages/get_it/install
-https://pub.dev/packages/dartz/install
+    https://pub.dev/packages/get_it/install
+    https://pub.dev/packages/dartz/install
+
+
+    monorepo
+
+    cd packages/core
+    flutter create --template=package micro_core
+
+    cd packages/commons
+    flutter create --template=package dependencies
+
+    cd packages/micro_apps
+    flutter create --template=package movie
