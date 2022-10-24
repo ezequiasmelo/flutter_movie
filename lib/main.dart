@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie/splash/splash_page.dart';
+import 'package:login/micro_app_login_resolver.dart';
 import 'package:micro_core/micro_core.dart';
 import 'package:movie/movie.dart';
 
@@ -17,15 +19,18 @@ class MyApp extends StatelessWidget with BaseApp {
       theme: ThemeData.dark(),
       navigatorKey: navigatorKey,
       onGenerateRoute: super.generateRoute,
-      initialRoute: '/home',
+      initialRoute: '/splash',
     );
   }
 
   @override
-  Map<String, WidgetBuilderArgs> get baseRoutes => {};
+  Map<String, WidgetBuilderArgs> get baseRoutes => {
+        '/splash': (_, __) => SplashPage(),
+      };
 
   @override
   List<MicroApp> get microApps => [
         MicroAppMovieResolver(),
+        MicroAppLoginResolver(),
       ];
 }

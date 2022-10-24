@@ -33,8 +33,10 @@ samples, guidance on mobile development, and a full API reference.
     https://pub.dev/packages/get_it/install
     https://pub.dev/packages/dartz/install
 
+Clean Architecture
+Micro-frontends com Monorepo
 
-    monorepo
+commands 
 
     cd packages/core
     flutter create --template=package micro_core
@@ -44,3 +46,4 @@ samples, guidance on mobile development, and a full API reference.
 
     cd packages/micro_apps
     flutter create --template=package movie
+    flutter create --template=package login
