@@ -47,3 +47,6 @@ commands
     cd packages/micro_apps
     flutter create --template=package movie
     flutter create --template=package login
+    
+    cd packages/commons
+    flutter create --template=package eventbus
