@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget with BaseApp {
   MyApp() {
     super.registerInjections();
     super.registerRouters();
+    super.registerListeners();
   }
 
   @override

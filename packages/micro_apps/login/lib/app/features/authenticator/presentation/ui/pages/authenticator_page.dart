@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:micro_core/micro_core.dart';
+import 'package:eventbus/eventbus.dart';
 
 class AuthenticatorPage extends StatelessWidget {
   const AuthenticatorPage({super.key});
@@ -15,6 +16,7 @@ class AuthenticatorPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Broadcast.emit(BroadcastType.ATHENTICATION_SUCCESS);
+                EventBus.emit('Logou');
                 navigatorKey.currentState?.pushReplacementNamed('/home');
               },
               child: const Text('Entrar'),
