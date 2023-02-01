@@ -34,3 +34,11 @@ https://www.dripcoding.com/json-to-dart/
 - [cached_network_image](https://pub.dev/packages/cached_network_image)
 - [get_it](https://pub.dev/packages/get_it)
 - [dartz](https://pub.dev/packages/dartz)
+- [flutter_dotenv](https://pub.dev/packages/flutter_dotenv)
+
+## Screens
+<br>
+<div align="center">
+    <img src="screens/Screenshot_1675261318.png" width="160"/>
+    <img src="screens/Screenshot_1675261321.png" width="160"/>
+</div>

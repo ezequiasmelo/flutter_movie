@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_movie/features/movie/data/datasources/get_movies_datasource.dart';
@@ -28,7 +29,7 @@ class GetMoviesLocalDataSourceDecoratorImp
     var prefs = await SharedPreferences.getInstance();
     String jsonMovies = jsonEncode(movies.toJson());
     prefs.setString('movies_cache', jsonMovies);
-    print('salvou no cache ' + jsonMovies);
+    log('salvou no cache $jsonMovies');
   }
 
   Future<MovieEntity> _getInCache() async {
@@ -36,7 +37,7 @@ class GetMoviesLocalDataSourceDecoratorImp
     var moviesJsonString = prefs.getString('movies_cache')!;
     var json = jsonDecode(moviesJsonString);
     var movies = MovieDto.fromJson(json);
-    print('recuperou cache ' + movies.toString());
+    log('recuperou cache ${movies.toString()}');
     return movies;
   }
 }
